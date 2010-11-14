@@ -1,0 +1,93 @@
+/*
+ * Brandur.org (resume)
+ */
+
+/****************************************************************************/
+
+body
+{
+    background: #fff url('/resume/assets/img/back.png') repeat;
+    color: #000;
+    font-family: georgia, serif;
+    font-size: 10pt;
+    line-height: 1.5em;
+    margin: 5em;
+}
+
+h1
+{
+    font-size: 100pt;
+    font-weight: normal;
+    letter-spacing: -6pt;
+    margin: 0.4em 0.2em 0.6em 0;
+}
+
+h2
+{
+    color: #60606c;
+    font-family: tahoma, sans-serif;
+    font-size: 9pt;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+ul
+{
+    margin: 0;
+}
+
+/****************************************************************************/
+
+div.content
+{
+    margin: 1em 0.5em;
+    padding: 0;
+}
+
+div.header
+{
+    background: #dededf;
+    cursor: pointer;
+    padding: 0 0.3em;
+    border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
+}
+
+div.placeholder
+{
+    height: 1em;
+}
+
+div#contact
+{
+    background: #fff;
+    opacity: 0.8;
+    margin: 1em 0;
+    padding: 0.4em;
+    vertical-align: bottom;
+    border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
+}
+
+div#contact a, div#contact a:visited, div#contact a:hover
+{
+    color: #000;
+    text-decoration: none;
+}
+
+div#contact ul, div#education ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+div#title_wrapper
+{
+    overflow: hidden;
+}
+
+/****************************************************************************/
+
