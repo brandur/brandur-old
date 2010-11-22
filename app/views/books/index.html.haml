@@ -1,4 +1,17 @@
-%ul
-- @books.each do |book|
-  %li= "#{book.title} by #{book.author}"
+- content_for(:title, raw('Book History &mdash; brandur.org'))
+- content_for(:stylesheets) do
+  = stylesheet_link_tag 'books'
+
+#wrapper
+  %h1 Books
+  - @books.group_by{ |b| b.finished_at.year }.each do |year, books|
+    %h2= year
+    %p= "#{pluralize(books.count, 'book')}"
+    %ul
+      - books.each do |book|
+        %li
+          = raw "#{link_to book.title, book} by #{book.author} finished on #{book.finished_at.strftime('%b %d')}"
+          - if book.review
+            = raw book.review_html
+          %p= "#{book.rating / 2.0} / 5"
 

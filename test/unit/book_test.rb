@@ -15,6 +15,13 @@ class BookTest < ActiveSupport::TestCase
     assert book.invalid?
   end
 
+  test "that that a book must have a finished date" do
+    book = books(:towers_of_midnight)
+    assert book.valid?
+    book.finished_at = nil
+    assert book.invalid?
+  end
+
   test "that that a book's rating must stay in a certain range" do
     book = books(:towers_of_midnight)
     book.rating = 11

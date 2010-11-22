@@ -13,9 +13,10 @@
 ActiveRecord::Schema.define(:version => 20101122002608) do
 
   create_table "books", :force => true do |t|
-    t.string   "title",      :null => false
+    t.string   "title",       :null => false
     t.string   "subtitle"
-    t.string   "author",     :null => false
+    t.string   "author",      :null => false
+    t.date     "finished_at", :null => false
     t.integer  "rating"
     t.text     "review"
     t.text     "synopsis"
