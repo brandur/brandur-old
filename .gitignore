@@ -2,6 +2,7 @@
 Gemfile.lock
 db/*.sqlite3
 log/*.log
+public/*.html
 public/javascripts/bundle/
 public/stylesheets/*.css
 ruby/**/*
