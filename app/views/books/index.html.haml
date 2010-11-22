@@ -3,10 +3,14 @@
   = stylesheet_link_tag 'books'
 
 #wrapper
-  %h1 Books
+  %h1 Book History
   - @books.group_by{ |b| b.finished_at.year }.each do |year, books|
     %h2= year
-    %p= "#{pluralize(books.count, 'book')}"
+    - days_this_year = year == Date.today.year ? Date.today.yday : 365
+    %p
+      %strong= pluralize(books.count, 'book')
+      completed this year, an average of one book every
+      %strong= pluralize(days_this_year / books.count, 'day')
     %ul
       - books.each do |book|
         %li
