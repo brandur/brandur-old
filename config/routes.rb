@@ -1,4 +1,9 @@
 Askja::Application.routes.draw do
+  resources :books
+
+  match 'books/:id' => 'books#show'
+  match 'books' => 'books#index'
+
   root :to => 'home#index'
 
   # The priority is based upon order of creation:

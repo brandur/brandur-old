@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+
+power_hungry:
+  title: Power Hungry
+  subtitle: The Myths of "Green" Energy and the Real Fuels of the Future
+  author: Robert Bryce
+  rating: 9
+  review: 
+  synopsis:
+
+towers_of_midnight:
+  title: Towers of Midnight
+  author: Brandon Sanderson
+  rating: 8
+  review: 
+  synopsis:
