@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+  caches_page :index, :get
+  cache_sweeper :book_sweeper
+
   def index
     @books = Book.all
 
