@@ -11,7 +11,8 @@ power_hungry:
   author: Robert Bryce
   finished_at: 2010-11-12
   rating: 9
-  review: Nice book detailing the current state of energy in the United States and how likely renewables are to bail us out of the situation (hint&mdash;not very likely).
+  review: |
+    Excellent book detailing the current state of power in the world, specifically the United States. It showcases nuclear energy prominently as the future of power, and explains why gas and coal will likely always play an important role in the grid (proponent of N2N, "natural gas to nuclear"). Green energy is covered in detail and shown to mostly be good meaning, but ultimately not practical for the real world. Conjectures are supported by hard facts and numbers throughout.
   synopsis:
 
 towers_of_midnight:
@@ -19,8 +20,28 @@ towers_of_midnight:
   author: Brandon Sanderson
   finished_at: 2010-11-21
   rating: 8
-  review: Worthy continuation of Jordan's legacy.
-  synopsis:
+  review: |
+    Brandon Sanderon's second book in the Wheel of Time series after taking the helm where Jordan left off. Differences in writing style are noticeable, but this small problem is overshadowed by the engrossing story arcs that are finally being allowed to advance and even conclude. Reading this book inspires optimism that the series will in fact come to a satisfying close, even for those readers who have invested decades in it.
+  synopsis: |
+    Once again, the book largely centers around Perrin, with sides of Mat and Elayne, and chapters from the point of view of dozens of other characters. As usual in the Wheel of Time, there are a huge number of arcs being covered simultaneously:
+
+    * Rand, now with the full memories of Lews Therin, travels to Tar Valon to tell Egwene that he must break the remaining seals for the Dark One's prison before creating new ones.
+    * Egwene must gather support to convince Rand not to break the seals.
+    * Egwene tries to uncover the Forsaken Mesaana who she believes is still hiding in the White Tower, she eventually does in a massive battle in the dream world.
+    * Nynaeve heals the madness of an Asha'man.
+    * It turns out that Graendal survived Rand's Balefire trap. Moridin sends her on a new mission to kill Perrin.
+    * Perrin must come to terms with the wolf in him. He trains in the wolf dream and battles Slayer, an unknown enemy who has perfect control over the world of dreams. Perrin eventually discovers that the Wolf Brother who he'd previously seen driven insane gave into the wolf willingly.
+    * Perrin must stand trial for killing Whitecloaks. He is found guilty on some counts, but is let off easy by Galad when a giant Trolloc army attacks. The remaining Whitecloaks merge with Perrin's army.
+    * Perrin creates a Power-forged weapon.
+    * Mat and Thom must rescue Moraine from the Snakes and Foxes. They enter the Tower of Ghenjei, rescue her, and escape when Mat realizes that his polearm is a key back out of the other world.
+    * Mat encounters the gholam for the last time and defeats it using copies of his foxhead medallion created by Elayne and a Gateway.
+    * Mat's Illuminator Aludra's dragons (i.e. cannons) are put into production and the troops begin to train with them.
+    * Elayne plays politics and manages to take the throne in Cairhien.
+    * The Seanchan discover Traveling.
+    * The Black Tower remains divided.
+    * Aviendha travels to Rhuidean and sees visions of the future where the Aiel are eventually exterminated by a contemporary version of the Seanchan, after failing to comply with Rand's wishes of peace.
+    * Lan gathers an army and prepares to make a last stand at Tarwin's Gap.
+    * A force of Trollocs enter Camelyn through an unknown Waygate and burn it (Verin warned Mat of this, but he failed to open the letter she gave him).
 
 elantris:
   title: Elantris

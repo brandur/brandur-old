@@ -5,20 +5,22 @@
 #wrapper
   %h1 Books
   %h2= @book.title
+  - if @book.subtitle
+    %p.subtitle= @book.subtitle
   %p.summary
     by
     = @book.author
     %span.meta
       finished on 
       = @book.finished_at.strftime('%b %d')
+      = "(#{@order.ordinalize} book this year)"
   - if @book.review
     %h3 Review
     .review
       = raw @book.review_html
-  .post_review
-    %p
-      = "#{@book.rating / 2.0} / 5"
-      %span.stars{ :style => "width: #{@book.rating * 8}px;" }
+  %p.post_review
+    = "#{@book.rating / 2.0} / 5"
+    %span.stars{ :style => "width: #{@book.rating * 8}px;" }
   - if @book.synopsis
     %h3 Synopsis
     %p.warning (Contains spoilers!)

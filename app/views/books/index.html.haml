@@ -12,7 +12,7 @@
     %p.summary
       %strong= pluralize(books.count, 'book')
       - if books.last.finished_at.month > 2
-        = "completed since #{books.last.finished_at.strftime('%b %d')}, an average of one book every"
+        = "completed from #{books.last.finished_at.strftime('%b %d')}, an average of one book every"
       - else
         completed this year, an average of one book every
       %strong= pluralize(days_this_year / books.count, 'day')
