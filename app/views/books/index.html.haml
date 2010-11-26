@@ -7,15 +7,16 @@
   - @books.group_by{ |b| b.finished_at.year }.each do |year, books|
     %h2= year
     - days_this_year = year == Date.today.year ? Date.today.yday : 365
-    %p
+    %p.summary
       %strong= pluralize(books.count, 'book')
       completed this year, an average of one book every
       %strong= pluralize(days_this_year / books.count, 'day')
-    %ul
+    %ul.books
       - books.each do |book|
         %li
           = raw "#{link_to book.title, book} by #{book.author} finished on #{book.finished_at.strftime('%b %d')}"
           - if book.review
-            = raw book.review_html
+            .review
+              = raw book.review_html
           %p= "#{book.rating / 2.0} / 5"
 
