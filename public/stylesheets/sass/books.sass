@@ -10,24 +10,35 @@ body
   font-family: Georgia, serif
 
 h1
+  font-size: 90px
   font-weight: 200
-  font-size: 40px
   text-align: center
-  text-shadow: #000 0 0 2px
+  text-shadow: #000 0 0 4px
   border-bottom: 2px solid #d2b586
   display: block
-  padding: 0 0 20px 0
+  padding: 0 0 16px 0
+  margin: 20px 0
 
 h2
+  font-size: 24px
   font-weight: 200
   text-align: center
   border-bottom: 1px solid #d2b586
   display: block
   padding: 0 0 20px 0
 
+h3
+  font-size: 20px
+  font-weight: 200
+  text-align: center
+  border-bottom: 1px solid #ddd
+  display: block
+  padding: 0 0 16px 0
+
 p
   color: #50505c
   font-size: 15px
+  text-align: justify
 
 .net
   color: #2233ff
@@ -40,9 +51,37 @@ p
   max-width: 700px
   margin: 0 auto
 
+  div.review, div.synopsis
+    margin: 0 20px
+    text-align: justify
+    -moz-column-count: 2
+    -moz-column-gap: 20px
+    -webkit-column-count: 2
+    -webkit-column-gap: 20px
+    column-count: 2
+    column-gap: 20px
+
+  div.post_review
+    text-align: center
+
   p.summary
     text-align: center
 
+  p.warning
+    font-size: 14px
+    font-style: italic
+    text-align: center
+
+  span.meta
+    color: #808080
+
+  span.stars
+    background: transparent url('/images/star.png') repeat-x scroll 0
+    width: 80px
+    height: 16px
+    display: inline-block
+    margin: 4px 0 0 0
+    
   ul.books
     list-style-type: none
     padding: 0
@@ -52,6 +91,7 @@ p
       margin: 16px 0
       border-bottom: 1px solid #ddd
 
-      div.review
-        margin: 0 0 0 20px
-    
+      p.book_info
+        color: #000
+        font-size: 16px
+

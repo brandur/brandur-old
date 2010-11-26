@@ -1,0 +1,28 @@
+- content_for(:title, raw("#{@book.title} &mdash; Book History &mdash; brandur.org"))
+- content_for(:stylesheets) do
+  = stylesheet_link_tag 'books'
+
+#wrapper
+  %h1 Books
+  %h2= @book.title
+  %p.summary
+    by
+    = @book.author
+    %span.meta
+      finished on 
+      = @book.finished_at.strftime('%b %d')
+  - if @book.review
+    %h3 Review
+    .review
+      = raw @book.review_html
+  .post_review
+    %p
+      = "#{@book.rating / 2.0} / 5"
+      %span.stars{ :style => "width: #{@book.rating * 8}px;" }
+  - if @book.synopsis
+    %h3 Synopsis
+    %p.warning (Contains spoilers!)
+    .synopsis
+      = raw @book.synopsis_html
+
+
