@@ -8,7 +8,7 @@
     %h2= year
     - days_this_year = year == Date.today.year ? Date.today.yday : 365
     - if books.last.finished_at.month > 2
-      - days_this_year -= books.last.finished_at.yday
+      - days_this_year -= books.last.finished_at.yday + 1
     %p.summary
       %strong= pluralize(books.count, 'book')
       - if books.last.finished_at.month > 2
