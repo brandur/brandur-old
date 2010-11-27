@@ -12,7 +12,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.find(params[:id])
+    @book = Book.find_by_permalink(params[:id])
     @order = Book.where('finished_at < ?', @book.finished_at).where('finished_at > ?', @book.finished_at.year).count + 1
 
     respond_to do |format|
