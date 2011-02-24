@@ -1,12 +1,47 @@
 - content_for(:title, raw('Brandur Leach &mdash; brandur.org'))
+- content_for(:fonts) do
+  %link{ :href => 'http://fonts.googleapis.com/css?family=Raleway:100|&amp;subset=latin', :rel => 'stylesheet', :type => 'text/css' }
 - content_for(:stylesheets) do
   = stylesheet_link_tag 'index'
 
-%h1
-  %span#time_of_day Good morning!
-  I'm Brandur &mdash;
-:markdown
-  &mdash; a <span class="net">.NET</span>/<span class="rails">Rails</span> designer and developer working out of Calgary. I [blog about technology](http://mutelight.org "Go to Brandur's blog"), [blog about surfing](http://surf.brandur.org "Go to Brandur's surf and travel blog"), [read](/books "Go to Brandur's book history") and like to get <span id="mail">[mail](#)</span>.
+#header
+  %h1 Hi, I'm Brandur.
 
-  You should follow me on [Twitter](http://twitter.com/fyrerise "Follow Brandur on Twitter").
+#boxes
+  .box
+    %h2 About
+    :markdown
+      I'm a <span class="net">.NET</span>/<span class="rails">Rails</span> designer and developer working out of Calgary. I [blog about technology](http://mutelight.org "Go to Brandur's blog"), [blog about surfing](http://surf.brandur.org "Go to Brandur's surf and travel blog"), [read](/books "Go to Brandur's book history") and like to get <span id="mail">[mail](#)</span>.
 
+      You should follow me on [Twitter](http://twitter.com/fyrerise "Follow Brandur on Twitter").
+
+  .box
+    %h2 Articles
+    %p I <a href="http://mutelight.org">blog about technology</a> and other interesting things. Here are the latest articles that I've written:
+    %ul
+      - @articles.each do |a|
+        %li
+          %a(href="#{a.link}")= a.title
+          %span.meta= a.published_at.getlocal.strftime('%b %e, %Y')
+
+  .box
+    %h2 Photos
+    %ul.photos
+      - @photos.each do |p|
+        %li
+          %a(href="#{p.link}")
+            %img(src="#{p.thumbnail_url}")
+    .clear
+
+  .box
+    %h2 Twitter
+    %p Microblogging lowers the barrier of broadcasting interesting things online. Here are my latest tweets:
+    %ul
+      - @tweets.each do |t|
+        %li
+          = t.content
+          %span.meta= "#{distance_of_time_in_words(t.published_at.getlocal, Time.now, true)} ago"
+    %p
+      %a(href='http://twitter.com/fyrerise') You should follow me on Twitter.
+
+#footer

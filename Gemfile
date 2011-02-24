@@ -6,6 +6,7 @@ gem 'bistro_car'
 gem 'formtastic'
 gem 'jquery-rails'
 gem 'haml'
+gem 'libxml-ruby'
 gem 'rdiscount'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
