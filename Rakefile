@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Askja::Application.load_tasks
+Brandur::Application.load_tasks

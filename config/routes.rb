@@ -1,8 +1,10 @@
-Askja::Application.routes.draw do
+Brandur::Application.routes.draw do
   resources :books
 
   match 'books/:id' => 'books#show'
   match 'books' => 'books#index'
+
+  match 'sandbox' => 'home#sandbox'
 
   root :to => 'home#index'
 
