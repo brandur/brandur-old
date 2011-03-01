@@ -6,6 +6,7 @@
 
 #header
   %h1 Hi, I'm Brandur.
+  /%p#special I'm currently in Las Vegas for #{link_to '#mix11', 'http://live.visitmix.com'}, follow me!
 
 #boxes
   .box
@@ -25,6 +26,117 @@
           %span.meta= a.published_at.getlocal.strftime('%b %e, %Y')
 
   .box
+    %h2 Books
+    %p These days I try to read mostly non-fiction. #{link_to 'My entire book history', :controller => :books} is available online. The most recent book that I read was #{link_to @book.title, @book}.
+    #book_chart(style="width: 100%; height: 100px; overflow: hidden;")
+    - content_for(:javascript) do
+      :javascript 
+        var chart;
+        $(document).ready(function() {
+           chart = new Highcharts.Chart({
+              chart: {
+                 renderTo: 'book_chart',
+                 defaultSeriesType: 'bar'
+              },
+              title: {
+                 text: 'Number of Books Read by Year'
+              },
+              xAxis: {
+                 categories: [ #{@book_years.join(', ')} ], 
+                 title: {
+                    text: null
+                 }
+              },
+              yAxis: {
+                 min: 0,
+                 title: {
+                    text: null
+                 }
+              },
+              tooltip: {
+                 formatter: function() {
+                    return this.y + (this.y != 1 ? ' books read' : ' book read') + ' in ' + this.x;
+                 }
+              },
+              plotOptions: {
+                 bar: {
+                    dataLabels: {
+                       enabled: true
+                    }
+                 }
+              },
+              legend: {
+                 enabled: false
+              },
+              credits: {
+                 enabled: false
+              },
+              series: [{
+                 name: 'Books read', 
+                 data: [ #{@book_year_counts.join(', ')} ]
+              }]
+           });
+        });
+
+  .box
+    %h2 Facts
+    %p I maintain a #{link_to 'facts database', 'http://facts.brandur.org'} to retain knowledge and make myself smarter. Most recently, I added facts on #{link_to 'Chernobyl', 'http://'}.
+    #facts_chart(style="width: 100%; height: 200px; overflow: hidden;")
+    - content_for(:javascript) do
+      :javascript 
+        var chart;
+        $(document).ready(function() {
+           chart = new Highcharts.Chart({
+              chart: {
+                 renderTo: 'facts_chart',
+                 defaultSeriesType: 'column'
+              },
+              title: {
+                 text: 'Facts Added in the Last 30 Days'
+              },
+              xAxis: {
+                 categories: [ #{@fact_days.collect{ |d| "'#{d}'" }.join(', ')} ], 
+                 labels: {
+                    rotation: -45, 
+                    align: 'right', 
+                    step: 5
+                 }, 
+                 title: {
+                    text: null
+                 }
+              },
+              yAxis: {
+                 min: 0,
+                 title: {
+                    text: null
+                 }
+              },
+              tooltip: {
+                 formatter: function() {
+                    return this.y + (this.y != 1 ? ' facts added' : ' fact read') + ' on ' + this.x;
+                 }
+              },
+              plotOptions: {
+                 bar: {
+                    dataLabels: {
+                       enabled: true
+                    }
+                 }
+              },
+              legend: {
+                 enabled: false
+              },
+              credits: {
+                 enabled: false
+              },
+              series: [{
+                 name: 'Facts added', 
+                 data: [ #{@fact_day_counts.join(', ')} ]
+              }]
+           });
+        });
+
+  .box
     %h2 Photos
     %ul.photos
       - @photos.each do |p|
@@ -32,6 +144,19 @@
           %a(href="#{p.link}")
             %img(src="#{p.thumbnail_url}")
     .clear
+    %p My favorite collections of photos are from when <a href="http://www.flickr.com/photos/brandurleach/collections/72157613774765987/">I visited Japan</a>, and when <a href="http://www.flickr.com/photos/brandurleach/collections/72157601552888447/">I stayed in Iceland</a>.
+
+  .box
+    %h2 Self-development
+    %ul
+      %li Meditate 15 minutes per day to clear the mind, and maintain focus.
+      %li Be the machine. Don't give into every emotional need, think about what your goals are and how you're going to accomplish them. #{link_to '1', 'http://coderoom.wordpress.com/2010/08/04/discipline-be-the-machine/'}
+      %li Set goals every week. We're all wired for weakness, and some of us choose to be strong. #{link_to '2', 'http://www.sebastianmarshall.com/?p=222'}
+      %li Chase meaning, not happiness. #{link_to '3', 'http://www.sebastianmarshall.com/?p=220'}
+      %li Don't focus on yourself. Focus on others and genuinely like them. Everything you learn will be from other people. #{link_to '4', 'http://vimeo.com/11414505'}
+      %li Use stoicism's negative visualization to lead a happier life. #{link_to '5', 'http://www.boingboing.net/2010/09/20/how-becoming-a-stoic.html#comments'}
+      %li Wake at 4:30 AM, and finish personal projects in the 2-3 hours before work. #{link_to '6', 'http://www.sebastianmarshall.com/working-full-time-where-to-find-time-to-start-a-side-business'}
+      %li Work on tangible stuff, document it, and claim credit. #{link_to '7', 'http://www.sebastianmarshall.com/how-to-get-a-raise'}
 
   .box
     %h2 Twitter
@@ -39,9 +164,12 @@
     %ul
       - @tweets.each do |t|
         %li
-          = t.content
-          %span.meta= "#{distance_of_time_in_words(t.published_at.getlocal, Time.now, true)} ago"
+          = raw t.content_html
+          %span.meta
+            %a(href="#{t.link}")= "#{distance_of_time_in_words(t.published_at.getlocal, Time.now, true)} ago"
     %p
       %a(href='http://twitter.com/fyrerise') You should follow me on Twitter.
 
 #footer
+  %p.meta
+    This website is open source, and #{link_to 'available on Github', 'http://github.com/fyrerise/brandur'}.

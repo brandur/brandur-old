@@ -2,7 +2,7 @@
 %html
   %head
     %title= content_for?(:title) ? yield(:title) : 'brandur.org'
-    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js', 'rails'
+    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js', 'highcharts', 'rails'
     = coffee_script_bundle
     = #coffee_script_bundle :mode => :inline
     = csrf_meta_tag

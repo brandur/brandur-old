@@ -11,6 +11,7 @@ power_hungry:
   author: Robert Bryce
   finished_at: 2010-11-12
   rating: 9
+  permalink: power-hungry
   review: |
     Excellent book detailing the current state of power in the world, specifically the United States. It showcases nuclear energy prominently as the future of power, and explains why gas and coal will likely always play an important role in the grid (proponent of N2N, "natural gas to nuclear"). Green energy is covered in detail and shown to mostly be good meaning, but ultimately not practical for the real world. Conjectures are supported by hard facts and numbers throughout.
   synopsis:
@@ -20,6 +21,7 @@ towers_of_midnight:
   author: Brandon Sanderson
   finished_at: 2010-11-21
   rating: 8
+  permalink: towers-of-midnight
   review: |
     Brandon Sanderon's second book in the Wheel of Time series after taking the helm where Jordan left off. Differences in writing style are noticeable, but this small problem is overshadowed by the engrossing story arcs that are finally being allowed to advance and even conclude. Reading this book inspires optimism that the series will in fact come to a satisfying close, even for those readers who have invested decades in it.
   synopsis: |
@@ -48,6 +50,7 @@ elantris:
   author: Brandon Sanderson
   finished_at: 2010-11-25
   rating: 5
+  permalink: elantris
   review: |
     Brandon Sanderson's first novel detailing the political intrigue surrounding a country that was foremost in the entire world until the unexpected collapse of their crown city. The story has many great ideas and absolutely fearful villains, but it isn't quite enough to save it from two lead characters who are too flawless to be relatable. Prose is generally a little contrived with filler dispersed throughout for the purpose of fleshing it out to 600 pages.
   synopsis: |

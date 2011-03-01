@@ -1,20 +1,23 @@
 a, a:visited, a:hover
-  background: #4477aa
-  padding: 2px
-  color: #fff
+  //background: #4477aa
+  //padding: 2px
+  //color: #fff
+  color: #4477aa
   text-decoration: none
-  border-radius: 2px
-  -moz-border-radius: 2px
-  -webkit-border-radius: 2px
+  //border-radius: 2px
+  //-moz-border-radius: 2px
+  //-webkit-border-radius: 2px
 
 a:hover
-  background: #efefef
-  color: #000
+  //background: #efefef
+  //color: #000
+  text-decoration: underline
 
 body
-  color: #777
+  color: #000
   background: #fff
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-size: 14px
   line-height: 1.8em
   margin: 70px
 
@@ -25,32 +28,92 @@ h1
   font-weight: lighter
   line-height: 1em
 
+h2, h3, h4
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-weight: 200
+
+h2
+  font-size: 34px
+
+h3
+  font-size: 24px
+
 img
   margin: 0
+
+ul
+  padding: 0 0 0 24px
+
+  li
+    padding: 0 0 0 6px
 
 .clear
   clear: both
 
-span.meta
+.meta
   color: #bbb
+  font-size: 12px
+
+  a, a:visited, a:hover
+    //background: transparent
+    //padding: 0
+    color: #bbb
+    //border-radius: 0
+    //-moz-border-radius: 0
+    //-webkit-border-radius: 0
+
+  //a:hover
+    color: #bbb
+    text-decoration: underline
 
 div#header
 
+  #special
+    background: #4477aa
+    color: #fff
+    padding: 2px 8px
+    border-radius: 4px
+    -moz-border-radius: 4px
+    -webkit-border-radius: 4px
+
+    a, a:link, a:visited, a:hover
+      background: #fff
+      padding: 2px
+      border-radius: 2px
+      -moz-border-radius: 2px
+      -webkit-border-radius: 2px
+
+    a:hover
+      background: #fff
+      color: #000
+      text-decoration: none
+
 div#boxes
+  -moz-column-count: auto
+  -moz-column-width: 300px
+  -moz-column-gap: 30px
+  -webkit-column-count: auto
+  -webkit-column-width: 300px
+  -webkit-column-gap: 30px
+  column-count: auto
+  column-width: 300px
+  column-gap: 30px
 
   div.box
-    float: down
-    width: 400px
-    margin: 0 20px 20px 0
+    margin: 0 0 20px 0
 
     ul.photos
+      /* constrain to four photos per line *
+      width: 320px
       line-height: 0
       list-style-type: none
+      margin: 0 auto
       padding: 0
 
       li
         float: left
         margin: 0 5px 5px 0
+        padding: 0
 
         a
           background: transparent

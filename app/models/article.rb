@@ -1,6 +1,7 @@
 require 'rss'
 
 class Article < ActiveRecord::Base
+  validates_presence_of :title, :link, :published_at
   validates_uniqueness_of :link
 
   default_scope :order => 'published_at DESC'

@@ -2,6 +2,7 @@ require 'open-uri'
 require 'xml'
 
 class Photo < ActiveRecord::Base
+  validates_presence_of :thumbnail_url, :link, :published_at
   validates_uniqueness_of :link
 
   default_scope :order => 'published_at DESC'
