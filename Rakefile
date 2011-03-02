@@ -9,6 +9,14 @@ Brandur::Application.load_tasks
 desc 'Updates all remote items'
 task :update => 'update:all'
 
+namespace :create do
+  desc 'Creates a new bookmark'
+  task :bookmark => :environment do
+    abort('Need title= and permalink=') unless ENV['title'] && ENV['permalink']
+    Bookmark.create! :description => ENV['description'], :permalink => ENV['permalink'], :title => ENV['title']
+  end
+end
+
 namespace :update do
   desc 'Updates all remote items'
   task :all => [ :articles, :fact_stats, :photos, :tweets ]

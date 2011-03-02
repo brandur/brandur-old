@@ -1,3 +1,6 @@
-* Rake task for creating bookmarks
+@todo
+=====
+
 * Columns are messed up in Chrome
 * Periodic update task
+* Cache sweepers
