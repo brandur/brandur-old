@@ -1,0 +1,46 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+
+how_we_made_github_fast:
+  description: The most interesting server architecture that I've ever read about.
+  permalink: https://github.com/blog/530-how-we-made-github-fast
+  title: How we made GitHub fast
+  created_at: 2011-02-28
+
+benefits_of_meditation:
+  permalink: http://philosophistry.com/archives/2011/02/benefits-of-meditation.html
+  title: Eight changes to my life as a result of just four weeks of daily meditation
+  created_at: 2011-02-27
+
+z:
+  description: Stop `cd`ing around your directory structure, and start using the command line efficiently.
+  permalink: https://github.com/rupa/z
+  title: z
+  created_at: 2011-02-26
+
+host_a_static_website_on_s3:
+  description: It's not possible to host sites on S3 without overblown hacking.
+  permalink: http://aws.typepad.com/aws/2011/02/host-your-static-website-on-amazon-s3.html
+  title: Host your static website on Amazon S3
+  created_at: 2011-02-25
+
+how_to_get_a_raise:
+  description: Are you a developer? Read this article for your own good.
+  permalink: http://www.sebastianmarshall.com/how-to-get-a-raise
+  title: How to get a raise
+  created_at: 2011-02-24
+
+when_irish_eyes_are_crying:
+  description: Article on the causes of the economic crash in Ireland.
+  permalink: http://www.vanityfair.com/business/features/2011/03/michael-lewis-ireland-201103?printable=true
+  title: When Irish eyes are crying
+  created_at: 2011-02-23
+
+hulk:
+  description: An IRC server written in Haskell with a great outline of the program's flow.
+  permalink: http://chrisdone.com/posts/2011-01-30-hulk-haskell-irc-server.html
+  title: Hulk
+  created_at: 2011-02-22

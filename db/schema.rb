@@ -10,12 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302032303) do
+ActiveRecord::Schema.define(:version => 20110302044214) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.string   "link"
     t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bookmarks", :force => true do |t|
+    t.string   "description"
+    t.string   "permalink"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

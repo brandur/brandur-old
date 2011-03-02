@@ -177,6 +177,13 @@
     %p
       %a(href='http://twitter.com/fyrerise') You should follow me on Twitter.
 
+  .box
+    %h2 Web
+    %p Highly recommended links from around the web.
+    %ul
+      - @bookmarks.each do |b|
+        %li #{link_to b.title, b.permalink}#{b.description ? ": #{b.description}" : ''}
+
 #footer
   %p.meta
     This website is open source, and #{link_to 'available on Github', 'http://github.com/fyrerise/brandur'}.

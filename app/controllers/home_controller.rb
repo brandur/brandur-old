@@ -7,6 +7,7 @@ class HomeController < ApplicationController
     books = Book.all.group_by{ |b| b.finished_at.year }.map{ |y, bs| { :year => y, :num_books => bs.count } }.sort_by{ |obj| obj[:year] }.reverse
     @book_stats = { :years => books.map{ |b| b[:year] },
                     :counts => books.map{ |b| b[:num_books] } }
+    @bookmarks = Bookmark.limit(5)
     fact_stat = FactStat.first
     if fact_stat
       @fact_last_category = { :name => fact_stat.last_category_name, :slug => fact_stat.last_category_slug }
