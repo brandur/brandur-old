@@ -11,11 +11,15 @@ task :update => 'update:all'
 
 namespace :update do
   desc 'Updates all remote items'
-  task :all => [ :articles, :photos, :tweets ]
+  task :all => [ :articles, :fact_stats, :photos, :tweets ]
 
   desc 'Update articles from blog'
   task :articles => :environment do
     Article.update
+  end
+
+  task :fact_stats => :environment do
+    FactStat.update
   end
 
   desc 'Update photos from Flickr'

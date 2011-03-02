@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110224165039) do
+ActiveRecord::Schema.define(:version => 20110302032303) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(:version => 20110224165039) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "permalink"
+  end
+
+  create_table "fact_stats", :force => true do |t|
+    t.string   "last_category_name"
+    t.string   "last_category_slug"
+    t.string   "facts_by_day"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "photos", :force => true do |t|
