@@ -5,7 +5,7 @@
 # below each fixture, per the syntax in the comments below
 
 how_we_made_github_fast:
-  description: The most interesting server architecture that I've ever read about.
+  description: Maybe the most interesting server architecture that I've ever read about.
   permalink: https://github.com/blog/530-how-we-made-github-fast
   title: How we made GitHub fast
   created_at: 2011-02-28
