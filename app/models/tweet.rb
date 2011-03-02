@@ -1,8 +1,8 @@
 require 'rss'
 
 class Tweet < ActiveRecord::Base
-  validates_presence_of :content, :link, :published_at
-  validates_uniqueness_of :link
+  validates_presence_of :content, :permalink, :published_at
+  validates_uniqueness_of :permalink
 
   default_scope :order => 'published_at DESC'
 
@@ -10,7 +10,7 @@ class Tweet < ActiveRecord::Base
     rss = RSS::Parser.parse(open('http://twitter.com/statuses/user_timeline/22980330.rss').read, false)
     rss.items.each do |i|
       # Time gets stored in UTC
-      tweet = Tweet.new :content => i.title.gsub(/^[^:]+: /, ''), :link => i.link, :published_at => Time.parse(i.date.to_s)
+      tweet = Tweet.new :content => i.title.gsub(/^[^:]+: /, ''), :permalink => i.link, :published_at => Time.parse(i.date.to_s)
       tweet.save if tweet.valid?
     end
   end

@@ -2,8 +2,8 @@ require 'open-uri'
 require 'xml'
 
 class Photo < ActiveRecord::Base
-  validates_presence_of :thumbnail_url, :link, :published_at
-  validates_uniqueness_of :link
+  validates_presence_of :thumbnail_url, :permalink, :published_at
+  validates_uniqueness_of :permalink
 
   default_scope :order => 'published_at DESC'
 
@@ -12,7 +12,7 @@ class Photo < ActiveRecord::Base
     doc = parser.parse
     doc.context.register_namespace('media', 'http://search.yahoo.com/mrss/')
     doc.find('//rss/channel/item').each do |i|
-      photo = Photo.new :thumbnail_url => i.find('media:thumbnail').first['url'], :link => i.find('link').first.content, :published_at => Time.parse(i.find('pubDate').first.content)
+      photo = Photo.new :thumbnail_url => i.find('media:thumbnail').first['url'], :permalink => i.find('link').first.content, :published_at => Time.parse(i.find('pubDate').first.content)
       photo.save if photo.valid?
     end
     doc

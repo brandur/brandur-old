@@ -10,11 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302044214) do
+ActiveRecord::Schema.define(:version => 20110302053757) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
-    t.string   "link"
+    t.string   "permalink"
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(:version => 20110302044214) do
 
   create_table "photos", :force => true do |t|
     t.string   "thumbnail_url"
-    t.string   "link"
+    t.string   "permalink"
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20110302044214) do
 
   create_table "tweets", :force => true do |t|
     t.string   "content"
-    t.string   "link"
+    t.string   "permalink"
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"

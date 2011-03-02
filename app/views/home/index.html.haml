@@ -22,7 +22,7 @@
     %ul
       - @articles.each do |a|
         %li
-          %a(href="#{a.link}")= a.title
+          %a(href="#{a.permalink}")= a.title
           %span.meta= a.published_at.getlocal.strftime('%b %e, %Y')
 
   .box
@@ -148,7 +148,7 @@
     %ul.photos
       - @photos.each do |p|
         %li
-          %a(href="#{p.link}")
+          %a(href="#{p.permalink}")
             %img(src="#{p.thumbnail_url}")
     .clear
     %p My favorite collections of photos are from when <a href="http://www.flickr.com/photos/brandurleach/collections/72157613774765987/">I visited Japan</a>, and when <a href="http://www.flickr.com/photos/brandurleach/collections/72157601552888447/">I stayed in Iceland</a>.
@@ -173,7 +173,7 @@
         %li
           = raw t.content_html
           %span.meta
-            %a(href="#{t.link}")= "#{distance_of_time_in_words(t.published_at.getlocal, Time.now, true)} ago"
+            %a(href="#{t.permalink}")= "#{distance_of_time_in_words(t.published_at.getlocal, Time.now, true)} ago"
     %p
       %a(href='http://twitter.com/fyrerise') You should follow me on Twitter.
 
