@@ -13,7 +13,8 @@ namespace :create do
   desc 'Creates a new bookmark'
   task :bookmark => :environment do
     abort('Need title= and permalink=') unless ENV['title'] && ENV['permalink']
-    Bookmark.create! :description => ENV['description'], :permalink => ENV['permalink'], :title => ENV['title']
+    bookmark = Bookmark.new :description => ENV['description'], :permalink => ENV['permalink'], :title => ENV['title']
+    BookmarksController.new.create bookmark
   end
 end
 
@@ -23,20 +24,20 @@ namespace :update do
 
   desc 'Update articles from blog'
   task :articles => :environment do
-    Article.update
+    ArticlesController.new.update
   end
 
   task :fact_stats => :environment do
-    FactStat.update
+    FactStatsController.new.update
   end
 
   desc 'Update photos from Flickr'
   task :photos => :environment do
-    Photo.update
+    PhotosController.new.update
   end
 
   desc 'Update tweets from Twitter'
   task :tweets => :environment do
-    Tweet.update
+    TweetsController.new.update
   end
 end

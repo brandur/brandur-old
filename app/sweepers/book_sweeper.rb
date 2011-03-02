@@ -18,5 +18,6 @@ class BookSweeper < ActionController::Caching::Sweeper
   def expire_cache_for(book)
     expire_page(:controller => 'books', :action => 'index')
     expire_page(:controller => 'books', :action => 'show', :id => book)
+    expire_page(:controller => 'home',  :action => 'index')
   end
 end

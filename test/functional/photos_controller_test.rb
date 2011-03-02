@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TweetTest < ActiveSupport::TestCase
+class PhotosControllerTest < ActionController::TestCase
   # Replace this with your real tests.
   test "the truth" do
     assert true
