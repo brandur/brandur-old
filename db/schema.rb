@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20110302032303) do
   create_table "fact_stats", :force => true do |t|
     t.string   "last_category_name"
     t.string   "last_category_slug"
+    t.integer  "last_fact_id"
     t.string   "facts_by_day"
     t.datetime "created_at"
     t.datetime "updated_at"
