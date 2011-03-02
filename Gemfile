@@ -9,6 +9,7 @@ gem 'haml'
 gem 'libxml-ruby'
 gem 'rdiscount'
 gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'whenever', :require => false
 
 # Use unicorn as the web server
 # gem 'unicorn'
