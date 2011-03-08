@@ -46,6 +46,7 @@ TEMPLATE
     abort('Need title= and permalink=') unless ENV['title'] && ENV['permalink']
     bookmark = Bookmark.new :description => ENV['description'], :permalink => ENV['permalink'], :title => ENV['title']
     BookmarksController.new.create bookmark
+    $stdout.puts "\t[ok] Saved #{title}"
   end
 end
 
@@ -56,6 +57,7 @@ namespace :update do
   desc 'Update articles from blog'
   task :articles => :environment do
     ArticlesController.new.update
+    $stdout.puts "\t[ok] Updated articles"
   end
 
   desc 'Update books from *.yml files in books/, use path= for a specific book'
@@ -77,15 +79,18 @@ namespace :update do
 
   task :fact_stats => :environment do
     FactStatsController.new.update
+    $stdout.puts "\t[ok] Updated fact statistics"
   end
 
   desc 'Update photos from Flickr'
   task :photos => :environment do
     PhotosController.new.update
+    $stdout.puts "\t[ok] Updated photos"
   end
 
   desc 'Update tweets from Twitter'
   task :tweets => :environment do
     TweetsController.new.update
+    $stdout.puts "\t[ok] Updated tweets"
   end
 end
