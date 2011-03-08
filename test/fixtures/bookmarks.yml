@@ -22,7 +22,7 @@ z:
   created_at: 2011-02-26
 
 host_a_static_website_on_s3:
-  description: It's not possible to host sites on S3 without overblown hacking.
+  description: It's now possible to host sites on S3 without overblown hacking.
   permalink: http://aws.typepad.com/aws/2011/02/host-your-static-website-on-amazon-s3.html
   title: Host your static website on Amazon S3
   created_at: 2011-02-25
