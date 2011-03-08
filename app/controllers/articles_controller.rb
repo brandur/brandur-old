@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
       article = Article.new :title => a.title.content, :permalink => a.link.href, :published_at => Time.parse(a.published.content.to_s)
       if article.valid?
         article.save
-        #expire_page :controller => :home, :action => :index
+        expire_page '/'
       end
     end
   end

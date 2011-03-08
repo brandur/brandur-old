@@ -61,18 +61,7 @@ namespace :update do
   desc 'Update books from *.yml files in books/, use path= for a specific book'
   task :books => :environment do
     paths = if ENV['path'] then [ENV['path']] else Dir['books/*.yml'] end
-    paths.each do |path|
-      book = Book.new YAML.load_file(path)
-      existing_book = Book.find_by_permalink(book.permalink)
-      book = if existing_book
-        existing_book.attributes = book.attributes
-        existing_book
-      else
-        book
-      end
-      book.save!
-      $stdout.puts "\t[ok] Saved #{path}"
-    end
+    BooksController.new.update(paths)
   end
 
   task :fact_stats => :environment do
