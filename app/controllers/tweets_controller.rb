@@ -8,7 +8,7 @@ class TweetsController < ApplicationController
       tweet = Tweet.new :content => i.title.gsub(/^[^:]+: /, ''), :permalink => i.link, :published_at => Time.parse(i.date.to_s)
       if tweet.valid?
         tweet.save
-        expire_page :controller => :home, :action => :index
+        #expire_page :controller => :home, :action => :index
       end
     end
   end
