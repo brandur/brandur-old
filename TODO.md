@@ -1,7 +1,10 @@
 @todo
 =====
 
-* Easy way of adding book records (Rake task using Vim + Yaml)
+* Add 2011 books
+* Add 2009 books
+* Add 2008 books
+* Redo books interface
 * Index pages for each section with longer history (i.e. photos, tweets, etc.)
 * AJAX way of isolating each section and getting its full contents (+ graceful degradation)
 

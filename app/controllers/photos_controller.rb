@@ -10,7 +10,7 @@ class PhotosController < ApplicationController
       photo = Photo.new :thumbnail_url => i.find('media:thumbnail').first['url'], :permalink => i.find('link').first.content, :published_at => Time.parse(i.find('pubDate').first.content)
       if photo.valid?
         photo.save
-        expire_page :controller => :home, :action => :index
+        expire_page '/'
       end
     end
   end

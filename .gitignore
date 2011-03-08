@@ -1,8 +1,10 @@
 .bundle
 Gemfile.lock
+current_book
 db/*.sqlite3
 log/*.log
 public/*.html
+public/books/*.html
 public/javascripts/bundle/
 public/stylesheets/*.css
 ruby/**/*
