@@ -33,7 +33,7 @@
       These days I try to read mostly non-fiction. #{link_to 'My entire reading history', :controller => :books} is available online.
       - if @book
         The most recent book that I read was #{link_to @book.title, @book} by #{@book.author}.
-    #book_chart(style="width: 100%; height: 100px; overflow: hidden;")
+    #book_chart(style="width: 100%; height: 120px; overflow: hidden;")
     - content_for(:javascript) do
       :javascript 
         var chart;
