@@ -13,6 +13,11 @@ Raise Database
 
 Raise the database using `rake db:schema:load`.
 
+Get Data
+--------
+
+Make sure to fetch some data for the application using a call to `rake update`. Next, you will set up a cron job to handle this automatically.
+
 Cron Tasks
 ----------
 

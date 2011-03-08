@@ -1,3 +1,3 @@
 $('#mail').live 'click', ->
-  $(this).html('<a href="mailto: brandur@mutelight.org">mail at brandur@mutelight.org</a>')
+  $(this).html('<a href="mailto: brandur@mutelight.org">brandur@mutelight.org</a>')
 
