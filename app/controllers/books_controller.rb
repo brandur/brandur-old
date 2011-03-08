@@ -33,6 +33,7 @@ class BooksController < ApplicationController
       end
       book.save!
       $stdout.puts "\t[ok] Saved #{path}"
+      expire_page "/books/#{book.permalink}"
     end
     expire_page '/'
     expire_page '/books'
