@@ -12,7 +12,7 @@
   .box
     %h2 About
     :markdown
-      I'm a .NET and Rails designer, developer, and architect working out of Calgary. I've done extensive development work, and I'll work on almost any technology stack. Drop me a line at <span id="mail">[this address](#)</span>.
+      I'm a .NET and Rails designer, developer, and architect working out of Calgary. I've done extensive development work, and I'll work on almost any technology stack. Drop me a line at <a href="mailto: brandur@mutelight.org">brandur@mutelight.org</a>.
 
       I'm interested in energy and how it relates to our society, muay thai, breakdancing, symphonic metal, surfing, and the guitar.
 
@@ -86,7 +86,7 @@
   .box
     %h2 Facts
     %p
-      I maintain a #{link_to 'facts database', 'http://facts.brandur.org'} to retain knowledge and make myself smarter.
+      I maintain a #{link_to 'facts database', 'http://facts.brandur.org'} to retain knowledge and try to make myself smarter.
       - if defined?(@fact_last_category)
         Most recently, I added facts on #{link_to @fact_last_category[:name], "http://facts.brandur.org/#{@fact_last_category[:slug]}"}.
     - if defined?(@fact_stats)
