@@ -46,7 +46,7 @@ TEMPLATE
     abort('Need title= and permalink=') unless ENV['title'] && ENV['permalink']
     bookmark = Bookmark.new :description => ENV['description'], :permalink => ENV['permalink'], :title => ENV['title']
     BookmarksController.new.create bookmark
-    $stdout.puts "\t[ok] Saved #{title}"
+    $stdout.puts "\t[ok] Saved #{bookmark.title}"
   end
 end
 
