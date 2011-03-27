@@ -83,3 +83,43 @@ namespace :update do
     $stdout.puts "\t[ok] Updated tweets"
   end
 end
+
+desc ''
+task :read_tweet_history => 'read_tweet_history:tweetake'
+
+namespace :read_tweet_history do
+  require 'csv'
+
+  desc 'Reads Twitter history in from a Tweetake CSV file'
+  task :tweetake => :environment do
+    abort('Need file=') unless ENV['file']
+    num_tweets_loaded = 0
+    CSV.foreach(ENV['file']) do |row|
+      user, message, time, image_url, message_url, id = row
+      action, id, name, user, location, profile_desc, image_url, profile_url, is_protected, time, message = row
+      next unless user == 'fyrerise'
+      tweet = Tweet.new :content => message.strip, :permalink => "http://twitter.com/fyrerise/statuses/#{id.strip}", :published_at => Time.parse(time)
+      if tweet.valid?
+        tweet.save 
+        num_tweets_loaded += 1
+      end
+    end
+    $stdout.puts "Loaded #{num_tweets_loaded} tweet(s)"
+  end
+
+  desc 'Reads Twitter history in from a TweetScan CSV file'
+  task :tweet_scan => :environment do
+    abort('Need file=') unless ENV['file']
+    num_tweets_loaded = 0
+    CSV.foreach(ENV['file']) do |row|
+      user, message, time, image_url, message_url, id = row
+      next unless user == 'fyrerise'
+      tweet = Tweet.new :content => message.strip, :permalink => message_url.strip, :published_at => Time.at(time.to_i)
+      if tweet.valid?
+        tweet.save 
+        num_tweets_loaded += 1
+      end
+    end
+    $stdout.puts "Loaded #{num_tweets_loaded} tweet(s)"
+  end
+end
