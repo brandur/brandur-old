@@ -3,7 +3,7 @@
   = stylesheet_link_tag 'index'
 
 %h2 Twitter
-%p Every one of my tweets. Ever.
+%p Every one of my tweets. Ever. That's right, all #{@tweets.count} of them.
 #tweet_chart(style="width: 100%; height: 240px; overflow: hidden;")
 - content_for(:javascript) do
   :javascript 

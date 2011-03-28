@@ -3,6 +3,7 @@ Brandur::Application.routes.draw do
 
   match 'books/:id' => 'books#show'
   match 'books' => 'books#index'
+  match 'twitter' => 'tweets#index'
 
   match 'sandbox' => 'home#sandbox'
 

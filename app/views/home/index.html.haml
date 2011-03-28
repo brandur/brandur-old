@@ -29,9 +29,9 @@
           %span.meta= a.published_at.getlocal.strftime('%b %e, %Y')
 
   .box
-    %h2 Books
+    %h2= link_to 'Books', :books
     %p
-      These days I try to read mostly non-fiction. #{link_to 'My entire reading history', :controller => :books} is available online.
+      These days I try to read mostly non-fiction. #{link_to 'My entire reading history', :books} is available online.
       - if @book
         The most recent book that I read was #{link_to @book.title, @book} by #{@book.author}.
     #book_chart(style="width: 100%; height: 120px; overflow: hidden;")
@@ -123,7 +123,7 @@
                 },
                 tooltip: {
                    formatter: function() {
-                      return this.y + (this.y != 1 ? ' facts added' : ' fact read') + ' on ' + this.x;
+                      return this.y + (this.y != 1 ? ' facts added' : ' fact added') + ' on ' + this.x;
                    }
                 },
                 plotOptions: {
@@ -169,7 +169,7 @@
       %li Work on tangible stuff, document it, and claim credit. #{link_to '7', 'http://www.sebastianmarshall.com/how-to-get-a-raise'}
 
   .box
-    %h2 Twitter
+    %h2= link_to 'Twitter', :twitter
     %p Microblogging lowers the barrier of broadcasting interesting things online. Here are my latest tweets:
     %ul
       - @tweets.each do |t|
@@ -177,6 +177,8 @@
           = raw t.content_html
           %span.meta
             %a(href="#{t.permalink}")= "#{distance_of_time_in_words(t.published_at.getlocal, Time.now, true)} ago"
+    %p= link_to "Every one of my #{pluralize(Tweet.count, 'tweet')}.", :twitter
+
 
   .box
     %h2 Web
@@ -185,6 +187,4 @@
       - @bookmarks.each do |b|
         %li #{link_to b.title, b.permalink}#{b.description ? ": #{b.description}" : ''}
 
-#footer
-  %p.meta
-    This website is open source, and #{link_to 'available on Github', 'http://github.com/fyrerise/brandur'}.
+= render :partial => 'footer'

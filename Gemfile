@@ -8,7 +8,8 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'libxml-ruby'
 gem 'rdiscount'
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'sql_funk', :git => 'git://github.com/lakim/sql_funk.git'
+gem 'sqlite3'
 gem 'whenever', :require => false
 
 # Use unicorn as the web server
