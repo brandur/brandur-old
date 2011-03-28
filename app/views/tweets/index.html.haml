@@ -1,0 +1,64 @@
+- content_for(:title, raw('Twitter &mdash; brandur.org'))
+- content_for(:stylesheets) do
+  = stylesheet_link_tag 'index'
+
+%h2 Twitter
+%p Every one of my tweets. Ever.
+#tweet_chart(style="width: 100%; height: 240px; overflow: hidden;")
+- content_for(:javascript) do
+  :javascript 
+    var chart;
+    $(document).ready(function() {
+       chart = new Highcharts.Chart({
+          chart: {
+             renderTo: 'tweet_chart',
+             defaultSeriesType: 'line'
+          },
+          title: {
+             text: 'Tweets by Month', 
+          },
+          xAxis: {
+             categories: [ #{@tweet_stats.map{ |s| s['month'] }.map{ |s| Time.new(s[0..4], s[5..7]) }.map{ |t| t.strftime("%b %y") }.map{ |m| "'#{m}'" }.join(', ')} ], 
+             labels: {
+                rotation: -45, 
+                align: 'right'
+             }, 
+          },
+          yAxis: {
+             min: 0,
+             title: {
+                text: null
+             }
+          },
+          tooltip: {
+             formatter: function() {
+                return this.y + (this.y != 1 ? ' tweets' : ' tweet') + ' in ' + this.x;
+             }
+          },
+          legend: {
+             enabled: false
+          },
+          credits: {
+             enabled: false
+          },
+          series: [{
+             name: 'Tweets',
+             data: [ #{@tweet_stats.map{ |s| s['count_all'] }.join(', ')} ]
+          }]
+       });
+    });
+
+#boxes
+  .box
+    %ul
+      - @tweets.each do |t|
+        %li
+          = raw t.content_html
+          %span.meta
+            - cutoff = Time.now - 1.year
+            - if t.published_at > cutoff
+              %a(href="#{t.permalink}")= "#{distance_of_time_in_words(t.published_at.getlocal, Time.now, true)} ago"
+            - else
+              %a(href="#{t.permalink}")= t.published_at.getlocal.strftime('%b %e, %Y %H:%M')
+
+= render :partial => 'home/footer'
