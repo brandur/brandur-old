@@ -1,0 +1,37 @@
+- content_for(:title, raw('Book History &mdash; brandur.org'))
+- content_for(:stylesheets) do
+  = stylesheet_link_tag 'books'
+
+#wrapper
+  h1 Books
+  - @books.group_by{ |b| b.finished_at.year }.each do |year, books|
+    h2= year.to_s
+    - days_this_year = year == Date.today.year ? Date.today.yday : 365
+    - if books.last.finished_at.month > 2
+      - days_this_year -= books.last.finished_at.yday + 1
+    p.summary
+      strong= pluralize(books.count, 'book')
+      - if books.last.finished_at.month > 2
+        = " completed from #{books.last.finished_at.strftime('%b %d')}, an average of one book every "
+      - else
+        = " completed this year, an average of one book every "
+      strong= pluralize(days_this_year / books.count, 'day')
+    ul.books
+      - books.each do |book|
+        li
+          p.book_info
+            = link_to book.title, book
+            |  by 
+            = book.author
+            span.meta
+              |  finished on 
+              = book.finished_at.strftime('%b %d')
+          - if book.review
+            .review
+              = raw book.review_html
+          p
+            | #{book.rating / 2.0} / 5 
+            span.stars style="width: #{book.rating * 8}px;"
+  h2 About
+  p#about My name is Brandur Leach, and this is a complete history of all the books I've read in recent memory. I keep track of these things so that I can refer books that I've read ages ago to people without forgetting their titles and authors; and just to keep a record for my own edification.
+

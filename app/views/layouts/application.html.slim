@@ -1,24 +1,24 @@
-!!! 5
-%html
-  %head
-    %title= content_for?(:title) ? yield(:title) : 'brandur.org'
+! doctype 5
+html
+  head
+    title= content_for?(:title) ? yield(:title) : 'brandur.org'
     = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js', 'highcharts', 'rails'
     = coffee_script_bundle
-    = #coffee_script_bundle :mode => :inline
+    /= coffee_script_bundle :mode => :inline
     = csrf_meta_tag
-    %meta{ 'http-equiv' => 'content-type', :content => 'text/html; charset=UTF-8' }
+    meta http-equiv='content-type' content='text/html; charset=UTF-8'
     = yield(:fonts)
     = yield(:stylesheets)
     = yield(:javascript)
     = yield(:head)
-  %body
+  body
     - flash.each do |name, msg|
-      .flash{ :id => "flash_#{name}" }= msg
+      .flash id="flash_#{name}"= msg
       - content_for(:javascript) do
-        :javascript
+        javascript:
           window.setTimeout('$("#flash_#{name}").slideUp(500)', 2000);
     - content_for(:post_body) do
-      :javascript
+      javascript:
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-6901854-2']);
         _gaq.push(['_trackPageview']);

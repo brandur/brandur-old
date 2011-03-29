@@ -1,0 +1,16 @@
+- content_for(:title, raw('Brandur Leach &mdash; brandur.org'))
+- content_for(:fonts) do
+  link href='http://fonts.googleapis.com/css?family=Raleway:100|&amp;subset=latin' rel='stylesheet' type='text/css' 
+- content_for(:stylesheets) do
+  = stylesheet_link_tag 'new'
+
+h1.rale My name is Brandur.
+h1 Hello
+h1
+  span#time_of_day Good morning!
+  | I'm Brandur &mdash;
+markdown:
+  | &mdash; a <span class="net">.NET</span>/<span class="rails">Rails</span> designer and developer working out of Calgary. I [blog about technology](http://mutelight.org "Go to Brandur's blog"), [blog about surfing](http://surf.brandur.org "Go to Brandur's surf and travel blog"), [read](/books "Go to Brandur's book history") and like to get <span id="mail">[mail](#)</span>.
+
+  | You should follow me on [Twitter](http://twitter.com/fyrerise "Follow Brandur on Twitter").
+

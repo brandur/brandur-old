@@ -1,0 +1,5 @@
+- content_for(:fonts) do
+  link href='http://fonts.googleapis.com/css?family=IM+Fell+English|&amp;subset=latin' rel='stylesheet' type='text/css' 
+- content_for(:content) do
+  = yield
+= render :file => 'layouts/application'

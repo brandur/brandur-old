@@ -8,9 +8,16 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'libxml-ruby'
 gem 'rdiscount'
+gem 'slim', :require => 'slim/rails'
+gem 'slim-rails'
 gem 'sql_funk', :git => 'git://github.com/lakim/sql_funk.git'
 gem 'sqlite3'
 gem 'whenever', :require => false
+
+group :development, :test do
+  gem 'cucumber'
+  gem 'rspec-rails', '~> 2.4'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
