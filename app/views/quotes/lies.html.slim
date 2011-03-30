@@ -1,0 +1,11 @@
+- content_for(:title) do
+  == 'Lies &mdash; brandur.org'
+- content_for(:stylesheets) do
+  = stylesheet_link_tag 'quotes'
+
+h1 ❧ Catch-22 ❧
+.quote
+  p.actor1 Major Major had lied, and it was good. He was not really surprised that it was good, for he had observed that people who did lie were, on the whole, more resourceful and ambitious and successful than people who did not lie.
+p.attribution &mdash; Chapter 9, Catch-22, Joseph Heller
+p.note I love this quote because of the deep insight into society that it provides. This may sound extreme, but we're encouraged and rewarded for lying everyday. Go to school or work, smile, compliment, cooperate, be positive, be fun, play by the rules, fit in with the team, don't condemn, criticize or complain. These are small lies, but lies nonetheless.
+= render :partial => 'home/footer'

@@ -1,0 +1,6 @@
+- content_for(:fonts) do
+  link href='http://fonts.googleapis.com/css?family=EB+Garamond|IM+Fell+English|&amp;subset=latin' rel='stylesheet' type='text/css' 
+- content_for(:content) do
+  #wrapper
+    = yield
+= render :file => 'layouts/application'

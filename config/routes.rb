@@ -5,6 +5,9 @@ Brandur::Application.routes.draw do
   match 'books' => 'books#index'
   match 'twitter' => 'tweets#index'
 
+  match 'favors' => 'quotes#favors'
+  match 'lies' => 'quotes#lies'
+
   match 'sandbox' => 'home#sandbox'
 
   root :to => 'home#index'
