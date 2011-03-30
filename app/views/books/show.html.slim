@@ -1,4 +1,5 @@
-- content_for(:title, raw("#{@book.title} &mdash; Book History &mdash; brandur.org"))
+- content_for(:title) do
+  == "#{@book.title} &mdash; Book History &mdash; brandur.org"
 - content_for(:stylesheets) do
   = stylesheet_link_tag 'books'
 

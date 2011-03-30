@@ -1,4 +1,5 @@
-- content_for(:title, raw('Twitter &mdash; brandur.org'))
+- content_for(:title) do
+  == 'Twitter &mdash; brandur.org'
 - content_for(:stylesheets) do
   = stylesheet_link_tag 'index'
 
