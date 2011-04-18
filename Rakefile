@@ -63,7 +63,7 @@ namespace :update do
   desc 'Update books from *.yml files in books/, use path= for a specific book'
   task :books => :environment do
     paths = if ENV['path'] then [ENV['path']] else Dir['books/*.yml'] end
-    BooksController.new.update(paths)
+    BooksController.new.update(paths.sort)
   end
 
   task :fact_stats => :environment do
