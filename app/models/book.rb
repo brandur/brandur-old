@@ -22,6 +22,6 @@ class Book < ActiveRecord::Base
   private
 
   def build_permalink
-    self.permalink = title.parameterize
+    self.permalink = title.parameterize unless permalink
   end
 end
